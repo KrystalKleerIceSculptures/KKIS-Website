@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using KKIS.Models;
 
-namespace KKIS_Website.Controllers
+namespace KKIS.Controllers
 {
     public class HomeController : Controller
     {
@@ -13,8 +14,13 @@ namespace KKIS_Website.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            return View(new ContactModel());
         }
 
+        [HttpPost]
+        public ActionResult Index(ContactModel model)
+        {
+            return View(model);
+        }
     }
 }

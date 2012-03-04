@@ -1,11 +1,9 @@
-﻿@{
+﻿@model KKIS.Models.ContactModel
+@{
     ViewBag.Title = "Krystal Kleer Ice Sculptures";
 }
 <div id="slider">
     <div id="templatemo_wrapper">
-        <div id="templatemo_social">
-        </div>
-        <!-- end of social -->
         <div id="templatemo_main">
             <div id="templatemo_sidebar">
                 <div id="header">
@@ -14,11 +12,11 @@
                 </div>
                 <div id="menu">
                     <ul class="navigation">
-                        <li><a href="#home" class="selected">Home</a></li>
-                        <li><a href="#aboutus">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#blog">Our Blog</a></li>
-                        <li><a href="#contactus" class="last">Contact Us</a></li>
+                        <li><a href="#contactus" class="selected">Contact Us</a></li>
+                        <li><a href="#gallery">Photo Gallery</a></li>
+                        <li><a href="#pricing">Sizes &amp; Pricing</a></li>
+                        <li><a href="#questions">Questions</a></li>
+                        <li><a href="#facebook" class="last">Facebook</a></li>
                     </ul>
                 </div>
             </div>
@@ -26,14 +24,10 @@
             <div id="templatemo_content">
                 <div class="scroll">
                     <div class="scrollContainer">
-                        <div class="panel" id="home">
-                            @Html.Partial("Home")
+                        <div class="panel" id="contactus">
+                            @Html.Partial("Contact", Model as KKIS.Models.ContactModel)
                         </div>
-                        <!-- end of home -->
-                        <div class="panel" id="aboutus">
-                            @Html.Partial("About")
-                        </div>
-                        <!-- end of about us -->
+                        <!-- end of contact us -->
                         <div class="panel" id="services">
                             @Html.Partial("Services")
                         </div>
@@ -42,10 +36,6 @@
                             @Html.Partial("Blog")
                         </div>
                         <!-- end of gallery -->
-                        <div class="panel" id="contactus">
-                            @Html.Partial("Contact")
-                        </div>
-                        <!-- end of contact us -->
                     </div>
                     <!-- end scrollContainer -->
                 </div>
