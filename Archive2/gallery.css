@@ -1,0 +1,47 @@
+@charset "utf-8";
+.gallery
+{
+	cursor: default;
+}
+.gallery  a
+{
+	cursor: default;
+}
+.gallery  a  .preview
+{
+	display: none;
+}
+.gallery  a:hover .preview
+{
+	display: block;
+	position: absolute;
+	top: -25px;
+	left: -25px;
+	z-index: 1;
+}
+.gallery img
+{
+	background-color: #000000;
+	background-image: url(images/load.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	vertical-align: top;
+	width: 100px;
+	height: 100px;
+	padding: 1px;
+	border: 0px;
+}
+.gallery  li
+{
+	display: inline;
+	float: left;
+	position: relative;
+	background-color: #000033;
+}
+.gallery  .preview
+{
+	border-color: #000000;
+	width: 150px;
+	height: 150px;
+	border: 1px;
+}

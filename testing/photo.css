@@ -1,0 +1,149 @@
+@charset "utf-8";
+a {color:#FFFFFF;}
+a:hover {text-decoration:none;}
+a:visited {color:#FFFFFF;}
+
+.kkis {}
+.kkis img {
+  background-color: #000000;
+  background-image: url(images/load.gif);
+  background-repeat: no-repeat;
+  background-position: center center;
+  vertical-align: top;
+}
+.kkis ul.photoMenu {
+  padding:0;
+  margin:0;
+  list-style:none;
+  width:780px;
+  height:auto;
+  position:relative;
+  z-index:10;
+}
+
+.kkis ul.photoMenu li {
+  float:left;
+  display:block;
+  width:130px;
+  height:31px;
+}
+.kkis ul.photoMenu li a {
+  display:block;
+  font-size:11px;
+  width:129px;
+  height:30px;
+  text-align:center;
+  line-height:30px;
+  color:#fff;
+  text-decoration:none;
+  border:1px solid #666;
+  border-width:1px 1px 0 0;
+  background:#333;
+  font-family:verdana, arial, sans-serif;
+}
+
+.kkis ul.photoMenu li a:hover,
+.kkis ul.photoMenu li:hover a {
+  color:#fff;
+  background:#aaa;
+}
+
+.kkis ul.photoGallery {
+  clear:both;
+  padding:33px;
+  height:515px;
+  background:#003;
+}
+
+.kkis ul.photoGallery li {
+  display:inline;
+  width:100px;
+  height:100px;
+  float:left;
+  border:1px solid #333;
+  margfin:1px;
+}
+
+.kkis ul.photoGallery li a {
+  display:block;
+  width:100px;
+  height:100px;
+  cursor:default;
+  float:left;
+  text-decoration:none;
+  background:#444;
+  border:1px solid #666;
+}
+
+.kkis ul.photoGallery li a img {
+  display:block;
+  width:auto;
+  margin:3px auto;
+  height:90px;
+  border:2px solid #333;
+}
+
+.kkis ul.photoGallery li a img.large {
+  position:absolute;
+  display:block;
+  width:0;
+  height:0;
+  overflow:hidden;
+  border:0;
+}
+
+.kkis ul.photoGallery li a:hover {
+  white-space:normal;
+  position:relative;
+  left:-30px;
+  top:-30px;
+  width:160px;
+  height:160px;
+}
+
+.kkis ul.photoGallery li a:hover img {
+  position:relative;
+  height:150px;
+}
+
+.kkis ul.photoGallery li a:hover img.large {
+  position:absolute;
+  display:block;
+  width:0;
+  height:0;
+  overflow:hidden;
+  border:0;
+}
+
+.kkis ul.photoGallery li a:focus, 
+.kkis ul.photoGallery li a:active {
+  position:static;
+  outline:0;
+}
+
+.kkis ul.photoGallery li a:focus img, 
+.kkis ul.photoGallery li a:active img {
+  position:absolute;
+  left:200px;
+  top:250px;
+  width:200px;
+  height:150px;
+  padding:0;
+  background:#000;
+  border:0;
+  z-index:5;
+}
+
+.kkis ul.photoGallery li a:focus img.large, 
+.kkis ul.photoGallery li a:active img.large {
+  position:absolute;
+  top:210px;
+  width:auto;
+  height:600px;
+  padding:0;
+  background:#000;
+  border:4px solid #fff;
+  z-index:10;
+}
+body
+{background-color: #000000;}

@@ -1,0 +1,80 @@
+@charset "utf-8";
+body  {
+	background: #333333;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	color: #FFFFFF;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 100%;
+}
+.kkis  #container {
+	width: 780px;
+	background: #000000;
+	margin: 0 auto;
+	border: 1px solid #000000;
+	text-align: center;
+} 
+.kkis  #logoright {
+	float: right;
+	margin: 10px;
+	background-color: #000000;
+	background-image: url(images/load.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.kkis #logoleft {
+	float: left;
+	margin: 10px;
+	background-color: #000000;
+	background-image: url(images/load.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.kkis   #title {
+	font-size: large;
+	font-style: italic;
+	font-weight: bold;
+	text-align: center;
+}
+.kkis #subtitle {
+	font-size: x-large;
+	font-style: italic;
+	text-align: center;
+}
+.kkis #menu {
+	background: #000033;
+	font-size: large;
+	clear: both;
+	margin: 10px;
+	text-align: center;
+}
+.kkis   #sidebar {
+	float: left;
+	width: 200px;
+	clear: left;
+	margin: 10px;
+	background: #003366;
+	padding: 5px;
+	font-size: small;
+}
+.kkis  #sidebarTitle {
+	background: #000033;
+	font-size: large;
+	border: 1px solid #000066;
+	padding: 2px;
+}
+.kkis  #mainContent {
+	margin-left: 230px;
+	padding: 10px;
+} 
+.kkis  #footer {
+	background:#000033;
+	font-size: x-small;
+	text-align: center;
+	clear: both;
+} 
+.kkis #footer p {
+	padding: 10px;
+	margin: 0px;
+}

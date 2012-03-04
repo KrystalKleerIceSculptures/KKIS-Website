@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="KKIS.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="FormMain" runat="server">
+    <div class="Header">
+        <img src="Images/logoright.gif" style="float: left; width: 75px; height: 102px;"
+            alt="Krystal Kleer Ice Sculptures" title="Krystal Kleer Ice Sculptures" />
+        <img src="Images/logoleft.gif" style="float: right; width: 75px; height: 102px;"
+            alt="Krystal Kleer Ice Sculptures" title="Krystal Kleer Ice Sculptures" />
+        <div id="Title">
+            Krystal Kleer Ice Sculptures, LLC</div>
+        <div id="Subtitle">
+            "Imagine the Possibilities"</div>
+        <div class="BlueBox">
+            <a href="Home.aspx">Home</a> | <a href="Gallery.aspx">Photo Gallery</a> | <a href="Pricing.aspx">
+                Sizes & Pricing</a> | <a href="Questions.aspx">Questions</a> | <a href="About.aspx">
+                    About Us</a> | <a href="Contact.aspx">Contact Us</a>
+        </div>
+    </div>
+    <div>
+        <asp:ContentPlaceHolder ID="BodyContentPlaceHolder" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <!-- Facebook Badge START -->
+    <a href="http://www.facebook.com/pages/Krystal-Kleer-Ice-Sculptures-LLC/129369767098901"
+        target="_TOP" style="font-family: &quot; lucida grande&quot; ,tahoma,verdana,arial,sans-serif;
+        font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal;
+        color: #3B5998; text-decoration: none;" title="Krystal Kleer Ice Sculptures, LLC">
+        Krystal Kleer Ice Sculptures, LLC</a><br />
+    <a href="http://www.facebook.com/pages/Krystal-Kleer-Ice-Sculptures-LLC/129369767098901"
+        target="_TOP" title="Krystal Kleer Ice Sculptures, LLC">
+        <img src="http://badge.facebook.com/badge/129369767098901.1225.1812467171.png" width="120"
+            height="284" style="border: 0px;" /></a><br />
+    <a href="http://www.facebook.com/business/dashboard/" target="_TOP" style="font-family: &quot;
+        lucida grande&quot; ,tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal;
+        font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;"
+        title="Make your own badge!">Promote Your Page Too</a><!-- Facebook Badge END -->
+    </form>
+</body>
+</html>

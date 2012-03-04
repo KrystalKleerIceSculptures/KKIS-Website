@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	background-color: #333333;
+}
+.Title {
+	color: #FFFFFF;
+	font-size: 36px;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+}
+.Subtitle {
+	color: #FFFFFF;
+	font-style: italic;
+	font-size: x-large;
+	text-align: center;
+}
+.MenuTitle {
+	font-size: large;
+	color: #FFFFFF;
+	font-weight: bolder;
+	background-color: #000033;
+}
+.Menu {
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: bold;
+}
+.SubMenu {
+	font-size: small;
+	color: #FFFFFF;
+	font-weight: normal;
+}
+.SubMenuBold {
+	font-size: small;
+	color: #FFFFCC;
+	font-weight: bold;
+}
+
+.Header {
+	font-size: x-large;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.Content {
+	font-size: medium;
+	color: #FFFFFF;
+}
+.Footer {
+	font-size: x-small;
+	color: #FFFFFF;
+	background-color: #333333;
+	text-align: center;
+}
+.FootContent {
+	font-size: medium;
+	color: #FFFFFF;
+	background-color: #000033;
+	text-align: center;
+}
+
+a:link {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+	color: #FFFFCC;
+}
