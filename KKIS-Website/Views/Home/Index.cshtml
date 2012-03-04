@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Krystal Kleer Ice Sculptures";
+}
+<div id="slider">
+    <div id="templatemo_wrapper">
+        <div id="templatemo_social">
+        </div>
+        <!-- end of social -->
+        <div id="templatemo_main">
+            <div id="templatemo_sidebar">
+                <div id="header">
+                    <h1><a href="/">Krystal Kleer Ice Sculptures, LLC</a>
+                    </h1>
+                </div>
+                <div id="menu">
+                    <ul class="navigation">
+                        <li><a href="#home" class="selected">Home</a></li>
+                        <li><a href="#aboutus">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#blog">Our Blog</a></li>
+                        <li><a href="#contactus" class="last">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- end of sidebar -->
+            <div id="templatemo_content">
+                <div class="scroll">
+                    <div class="scrollContainer">
+                        <div class="panel" id="home">
+                            @Html.Partial("Home")
+                        </div>
+                        <!-- end of home -->
+                        <div class="panel" id="aboutus">
+                            @Html.Partial("About")
+                        </div>
+                        <!-- end of about us -->
+                        <div class="panel" id="services">
+                            @Html.Partial("Services")
+                        </div>
+                        <!-- end of services -->
+                        <div class="panel" id="blog">
+                            @Html.Partial("Blog")
+                        </div>
+                        <!-- end of gallery -->
+                        <div class="panel" id="contactus">
+                            @Html.Partial("Contact")
+                        </div>
+                        <!-- end of contact us -->
+                    </div>
+                    <!-- end scrollContainer -->
+                </div>
+            </div>
+            <!-- end of content -->
+            <div class="cleaner">
+                s
+            </div>
+        </div>
+        <!-- end of main -->
+        <div id="templatemo_footer">
+            Copyright © 2011 <a href="#home">Krystal Kleer Ice Sculptures, LLC</a>
+            <div class="cleaner">
+            </div>
+        </div>
+    </div>
+    <!-- end of wrapper -->
+</div>
+<!-- end of slider -->

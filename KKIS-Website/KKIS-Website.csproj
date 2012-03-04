@@ -130,12 +130,30 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\coda-slider.css" />
+    <Content Include="Content\css\templatemo_style.css" />
+    <Content Include="Content\images\onebit_08.png" />
+    <Content Include="Content\images\onebit_11.png" />
+    <Content Include="Content\images\onebit_12.png" />
+    <Content Include="Content\images\onebit_17.png" />
+    <Content Include="Content\images\onebit_19.png" />
+    <Content Include="Content\images\onebit_21.png" />
+    <Content Include="Content\images\paul_judi_salmon.jpg" />
+    <Content Include="Content\images\templatemo_body.jpg" />
+    <Content Include="Content\images\templatemo_divider.png" />
+    <Content Include="Content\images\templatemo_image_01.jpg" />
+    <Content Include="Content\images\templatemo_image_02.jpg" />
+    <Content Include="Content\images\templatemo_image_03.jpg" />
+    <Content Include="Content\images\templatemo_image_04.jpg" />
+    <Content Include="Content\images\templatemo_list.png" />
+    <Content Include="Content\images\templatemo_logo.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -195,11 +213,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\About.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
