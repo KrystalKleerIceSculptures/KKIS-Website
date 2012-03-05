@@ -1,23 +1,75 @@
-﻿<h2>About Us</h2>
-<a href="http://www.templatemo.com/page/2" target="_parent">
-    <img src="/Content/images/paul_judi_salmon.jpg" alt="Image 2" class="image_wrapper image_fr"
-        width="200px" /></a>
+﻿@model KKIS.Models.ContactModel
+<div id="contactpanel">
+<h2>About Us</h2>
 <p>
-    Krystal Kleer Ice Sculptures was founded as a part-time business in 1988 by Paul
-    Salmon while he was working as a chef in Green Bay, WI. The business moved to Appleton,
-    WI in 1994. In 1998 Krystal Kleer became a full-time career for Paul.
+Phone: (920) 954-9191<br />
+Email: <a href="mailto:info@krystalkleerice.com">info@krystalkleerice.com</a>
 </p>
 <p>
-    Paul's family assists him at Krystal Kleer Ice in the office and with deliveries.
+    Hours by Appointment Only<br />
+    Operating from Appleton, WI
 </p>
-<p>
-    Paul attributes his talent to God our creator, and strives to honor Him through
-    his talent as a carver.
-</p>
-<p>
-    Krystal Kleer Ice Sculptures, LLC. Reserves the right to exercise discretion in
-    regards to each sculpture requested, and reserves the right to deny any carving
-    which might be considered objectionable or offensive in nature.
-</p>
-<div class="cleaner cleaner_h40">
+<div id="contactform">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Contact Us</legend>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Name)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+            <div class="cleaner_h10">
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Email)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+            <div class="cleaner_h10">
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Message)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Message)
+                @Html.ValidationMessageFor(model => model.Message)
+            </div>
+            <div class="cleaner_h10">
+            </div>
+            <p>
+                <input type="submit" value="Send" />
+                <input type="submit" value="Reset" />
+            </p>
+        </fieldset>
+    }
+</div>
+
+</div>
+<div id="aboutus">
+    <a href="/Content/images/profile.jpg" target="_parent">
+        <img src="/Content/images/profile.jpg" alt="Paul Salmon" class="image_wrapper image_fr" width="45%" /></a>
+    <p>
+        Krystal Kleer Ice Sculptures was founded as a part-time business in 1988 by Paul
+        Salmon while he was working as a chef in Green Bay, WI. The business moved to Appleton,
+        WI in 1994. In 1998 Krystal Kleer became a full-time career for Paul.
+    </p>
+    <p>
+        Paul's family assists him at Krystal Kleer Ice in the office and with deliveries.
+    </p>
+    <p>
+        Paul attributes his talent to God our creator, and strives to honor Him through
+        his talent as a carver.
+    </p>
+    <p>
+        Krystal Kleer Ice Sculptures, LLC. Reserves the right to exercise discretion in
+        regards to each sculpture requested, and reserves the right to deny any carving
+        which might be considered objectionable or offensive in nature.
+    </p>
 </div>
