@@ -17,36 +17,17 @@
 
                 <fieldset>
                     <legend>Contact Us</legend>
-                    <div class="editor-label">
-                        @Html.LabelFor(model => model.Name)
-                    </div>
-                    <div class="editor-field">
-                        @Html.EditorFor(model => model.Name)
-                        @Html.ValidationMessageFor(model => model.Name)
-                    </div>
-                    <div class="cleaner_h10">
-                    </div>
-                    <div class="editor-label">
-                        @Html.LabelFor(model => model.Email)
-                    </div>
-                    <div class="editor-field">
-                        @Html.EditorFor(model => model.Email)
-                        @Html.ValidationMessageFor(model => model.Email)
-                    </div>
-                    <div class="cleaner_h10">
-                    </div>
-                    <div class="editor-label">
-                        @Html.LabelFor(model => model.Message)
-                    </div>
-                    <div class="editor-field">
-                        @Html.EditorFor(model => model.Message)
-                        @Html.ValidationMessageFor(model => model.Message)
-                    </div>
-                    <div class="cleaner_h10">
-                    </div>
+                    @Html.LabelFor(model => model.Name)
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                    @Html.LabelFor(model => model.Email)
+                    @Html.EditorFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email)
+                    @Html.LabelFor(model => model.Message)
+                    @Html.EditorFor(model => model.Message)
+                    @Html.ValidationMessageFor(model => model.Message)
                     <p>
                         <input type="submit" value="Send" />
-                        <input type="submit" value="Reset" />
                     </p>
                 </fieldset>
             }
