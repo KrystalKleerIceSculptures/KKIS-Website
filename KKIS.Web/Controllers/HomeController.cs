@@ -5,16 +5,20 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using KKIS.Models;
+using KKIS.Services;
 
 namespace KKIS.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        //
-        // GET: /Home/
+        public HomeController()
+        {
+            kkisDataService = new DataService();
+        }
 
         public ActionResult Index()
         {
+            ViewBag.Gallery = kkisDataService.GetAlbumList(ConfigurationManager.AppSettings["KKISGoogleUser"]);
             return View(new ContactModel());
         }
 

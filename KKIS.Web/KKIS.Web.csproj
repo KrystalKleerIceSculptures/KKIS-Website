@@ -130,6 +130,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -252,6 +253,16 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KKIS.Models\KKIS.Models.csproj">
+      <Project>{76e4e7c0-de01-41ab-9924-8077b2a16a0b}</Project>
+      <Name>KKIS.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KKIS.Services\KKIS.Services.csproj">
+      <Project>{961e9512-209d-417d-b531-3c482c877ffa}</Project>
+      <Name>KKIS.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

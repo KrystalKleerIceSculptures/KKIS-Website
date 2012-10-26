@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 11
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KKIS.Web", "KKIS.Web\KKIS.Web.csproj", "{42976AC0-C892-423F-A0DA-6245AE212494}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KKIS.Services", "KKIS.Services\KKIS.Services.csproj", "{961E9512-209D-417D-B531-3C482C877FFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KKIS.Models", "KKIS.Models\KKIS.Models.csproj", "{76E4E7C0-DE01-41AB-9924-8077B2A16A0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +17,14 @@ Global
 		{42976AC0-C892-423F-A0DA-6245AE212494}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42976AC0-C892-423F-A0DA-6245AE212494}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42976AC0-C892-423F-A0DA-6245AE212494}.Release|Any CPU.Build.0 = Release|Any CPU
+		{961E9512-209D-417D-B531-3C482C877FFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{961E9512-209D-417D-B531-3C482C877FFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{961E9512-209D-417D-B531-3C482C877FFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{961E9512-209D-417D-B531-3C482C877FFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76E4E7C0-DE01-41AB-9924-8077B2A16A0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76E4E7C0-DE01-41AB-9924-8077B2A16A0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76E4E7C0-DE01-41AB-9924-8077B2A16A0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76E4E7C0-DE01-41AB-9924-8077B2A16A0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

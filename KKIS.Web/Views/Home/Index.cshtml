@@ -1,6 +1,5 @@
-﻿@model KKIS.Models.ContactModel
-@{
-    ViewBag.Title = "Krystal Kleer Ice Sculptures";
+﻿@{
+    Page.Title = "Krystal Kleer Ice Sculptures";
 }
 <div id="slider">
     <div id="kkis_main">
@@ -22,10 +21,10 @@
             <div class="scroll">
                 <div class="scrollContainer">
                     <div class="panel" id="aboutus">
-                        @Html.Partial("About", Model as KKIS.Models.ContactModel)
+                        @Html.Partial("About")
                     </div>
                     <div class="panel" id="gallery">
-                        @Html.Partial("Gallery")
+                        @Html.Partial("Gallery", ViewBag.Gallery as KKIS.Models.PhotoAlbumCollection)
                     </div>
                     <div class="panel" id="services">
                         @Html.Partial("Services")
