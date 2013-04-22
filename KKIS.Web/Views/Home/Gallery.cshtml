@@ -1,8 +1,8 @@
-﻿@model KKIS.Models.PhotoAlbumCollection
+﻿@model KKIS.Data.Models.PhotoAlbumCollection
 <div class="page-header">
     <h1>Gallery <small>sub-header</small></h1>
 </div>
-@foreach (KKIS.Models.PhotoAlbum album in Model)
+@foreach (KKIS.Data.Models.PhotoAlbum album in Model)
 {
     <div>@album.Title</div>
 }

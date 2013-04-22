@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Krystal Kleer Ice Sculptures - Photo Gallery";
+}
+<div id="photo-gallery">
+    <div class="row">
+        <div class="span4 affix">
+            <ul id="gallery-navigation" class="nav nav-pills nav-stacked">
+                @foreach (PhotoAlbum album in ViewBag.Gallery)
+                {
+                    <li>
+                        <a href="#">@album.Title</a>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <div class="offset4 span8" data-spy="scroll" data-target="#gallery-navigation">
+            @foreach (PhotoAlbum album in ViewBag.Gallery)
+            {
+                <div class="row">
+                    <div class="span8">
+                        <h1>@album.Title</h1>
+                        @foreach (Photo photo in album)
+                        {
+                            <div class="row">
+                                <div class="span8">
+                                    <div class="lead">@photo.Title</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="span8">
+                                    <img src="@photo.Url" width="100%" />
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

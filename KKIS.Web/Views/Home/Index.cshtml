@@ -1,46 +1,56 @@
 ﻿@{
-    Page.Title = "Krystal Kleer Ice Sculptures";
+    ViewBag.Title = "Krystal Kleer Ice Sculptures";
 }
-<div id="slider">
-    <div id="kkis_main">
-        <div id="kkis_sidebar">
-            <div id="header">
-                <h1><a href="/">Krystal Kleer Ice Sculptures, LLC</a></h1>
-            </div>
-            <div id="menu">
-                <ul class="navigation">
-                    <li><a href="#aboutus" class="selected">About Us</a></li>
-                    <li><a href="#gallery">Photo Gallery</a></li>
-                    <li><a href="#services">Sizes &amp; Pricing</a></li>
-                    <li><a href="#questions">Questions</a></li>
-                    <li><a href="#facebook" class="last">Facebook</a></li>
-                </ul>
-            </div>
-        </div>
-        <div id="kkis_content">
-            <div class="scroll">
-                <div class="scrollContainer">
-                    <div class="panel" id="aboutus">
-                        @Html.Partial("About")
-                    </div>
-                    <div class="panel" id="gallery">
-                        @Html.Partial("Gallery", ViewBag.Gallery as KKIS.Models.PhotoAlbumCollection)
-                    </div>
-                    <div class="panel" id="services">
-                        @Html.Partial("Services")
-                    </div>
-                    <div class="panel" id="questions">
-                        @Html.Partial("Questions")
-                    </div>
-                    <div class="panel" id="facebook">
-                        @Html.Partial("Facebook")
-                    </div>
+@section hero
+{
+    <div class="page-header hero">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <h1 class="visible-desktop">Krystal Kleer Ice Sculptures</h1>
+                    <p class="lead">Providing beautiful, "hand-carved" ice sculptures throughout Wisconsin and beyond since 1988</p>
+                    @Html.ActionLink("Get Started Now", "Index", "Gallery", null, new { @class = "btn btn-large btn-primary" })
                 </div>
             </div>
         </div>
     </div>
-    <div id="kkis_footer">
-        Copyright © @DateTime.Today.Year <a href="#home">Krystal Kleer Ice Sculptures, LLC
-        </a>
+}
+<div class="row highlights">
+    <div class="span4">
+        <img src="~/Content/images/bride_and_groom_over_the_threshold.jpg" class="img-circle" alt="Bride and groom over the threshold">
+        <h2>Wedding and Family</h2>
+        <p>Let us help create the perfect "this is us" celebration with a <b><i>stunning and personal work of art</i></b>. Add unforgettable sparkle to your special day!</p>
+        <p><a class="btn" href="#">Imagine yours... »</a></p>
+    </div>
+    <div class="span4">
+        <img src="~/Content/images/logo_with_clam_shell_package.jpg" class="img-circle" alt="logo with clam shell">
+        <h2>Corporate and Charity</h2>
+        <p>Ice sculptures are a beautiful way to celebrate success, reward employees, and impress donors. Let us help <b><i>make any event memorable</i></b>! </p>
+        <p><a class="btn" href="#">Imagine yours... »</a></p>
+    </div>
+    <div class="span4">
+        <img src="~/Content/images/snowflake.jpg" class="img-circle" alt="Bride and groom over the threshold">
+        <h2>Festivals and Live Events</h2>
+        <p><b><i>Draw in the crowds and shoppers</i></b> with a live sculpting demonstration. Year after year, people will look forward to your events.  Contact us today, and let's get started!</p>
+        <p><a class="btn" href="#">Imagine yours... »</a></p>
     </div>
 </div>
+<hr class="featurette-divider">
+<div class="featurette">
+    <img class="featurette-image pull-right" src="~/Content/images/frosty_the_snowman.jpg">
+    <h2 class="featurette-heading">"Hand-Carved" means we can "CREATE", uniquely what YOU want!<span class="muted">We also "make our own ice"</span></h2>
+    <p class="lead">enabling us to freeze items right inside for amazing special effects!</p>
+</div>
+<hr class="featurette-divider">
+<div class="featurette">
+    <img class="featurette-image pull-left" src="~/Content/images/frosty_the_snowman.jpg">
+    <h2 class="featurette-heading">25 years in business <span class="muted">shows that we are doing beautiful work!</span></h2>
+    <p class="lead">Decades of happy customers are a tribute to our high standards of excellence!</p>
+</div>
+<hr class="featurette-divider">
+<div class="featurette">
+    <img class="featurette-image pull-right" src="~/Content/images/frosty_the_snowman.jpg">
+    <h2 class="featurette-heading">Get started today <span class="muted">and let's make your event amazing!</span></h2>
+    <p class="lead">Contact Us at....</p>
+</div>
+<hr class="featurette-divider">
