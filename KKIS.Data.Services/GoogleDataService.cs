@@ -16,18 +16,17 @@ namespace KKIS.Data.Services
             Dictionary<string, string> albums = new Dictionary<string, string>();
             PicasaFeed picasaFeed = picasaService.Query(new AlbumQuery(PicasaQuery.CreatePicasaUri(user)));
 
-            picasaFeed.Entries.Select(x => albums[x.FeedUri] = x.Title.Text);
+            picasaFeed.Entries.Select(x => albums[x.FeedUri] = x.Title.Text).ToArray();
 
             return albums;
         }
-
 
         public Dictionary<string, string> GetPhotoList(string feedUri)
         {
             Dictionary<string, string> photos = new Dictionary<string, string>();
             PicasaFeed picasaFeed = picasaService.Query(new PhotoQuery(feedUri));
 
-            picasaFeed.Entries.Select(x => photos[x.Content.AbsoluteUri] = x.Summary.Text);
+            picasaFeed.Entries.Select(x => photos[x.Content.AbsoluteUri] = x.Summary.Text).ToArray();
 
             return photos;
         }
