@@ -15,19 +15,26 @@ namespace KKIS.Web.Tests.Data.Services
         public void GetAlbumListTest()
         {
             // Arrange
-            Dictionary<string, string> albums = new Dictionary<string, string>();
-            Dictionary<string, string> photos = new Dictionary<string, string>();
+            string testAlbumKey = "Test Album Key";
             string testAlbumTitle = "Test Album";
+            Dictionary<string, string> albums = new Dictionary<string, string>()
+            {
+                { testAlbumKey, testAlbumTitle }
+            };
             string testPhotoTitle = "Test Photo";
-            albums[string.Empty] = testAlbumTitle;
-            photos[string.Empty] = testPhotoTitle;
-            var mockGoogleService = new Mock<IGoogleDataService>();
-            mockGoogleService.Setup(x => x.GetAlbumList(It.IsAny<string>())).Returns(albums);
-            mockGoogleService.Setup(x => x.GetPhotoList(It.IsAny<string>())).Returns(photos);
+            string testPhotoKey = "Test Photo Key";
+            Dictionary<string, string> photos = new Dictionary<string, string>()
+            {
+                { testPhotoKey, testPhotoTitle }
+            };
+            string testUser = "Test User";
+            Mock<IGoogleDataService> mockGoogleService = new Mock<IGoogleDataService>();
+            mockGoogleService.Setup(x => x.GetAlbumList(testUser)).Returns(albums);
+            mockGoogleService.Setup(x => x.GetPhotoList(testAlbumKey)).Returns(photos);
             IKkisDataService dataService = new KkisDataService(mockGoogleService.Object);
 
             // Act
-            PhotoAlbumCollection result = dataService.GetAlbumList(string.Empty);
+            PhotoAlbumCollection result = dataService.GetAlbumList(testUser);
 
             // Assert
             Assert.IsNotNull(result);
