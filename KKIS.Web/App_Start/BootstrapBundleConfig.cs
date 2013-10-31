@@ -1,3 +1,12 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="BootstrapBundleConfig.cs" company="Krystal Kleer Ice Sculptures, LLC">
+//   Copyright (c) Krystal Kleer Ice Sculptures, LLC. All rights reserved.
+// </copyright>
+// <summary>
+//   
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 using System.Diagnostics.CodeAnalysis;
 using System.Web.Optimization;
 
@@ -5,9 +14,15 @@ using System.Web.Optimization;
 
 namespace KKIS.Web.App_Start
 {
+    /// <summary>
+    /// Bootstrap bundle config
+    /// </summary>
     [ExcludeFromCodeCoverage]
     public class BootstrapBundleConfig
     {
+        /// <summary>
+        /// Registers the bundles.
+        /// </summary>
         public static void RegisterBundles()
         {
             // Add @Styles.Render("~/Content/bootstrap") in the <head/> of your _Layout.cshtml view

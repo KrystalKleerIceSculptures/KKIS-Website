@@ -1,12 +1,25 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Web.Optimization;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="BundleConfig.cs" company="Krystal Kleer Ice Sculptures, LLC">
+//   Copyright (c) Krystal Kleer Ice Sculptures, LLC. All rights reserved.
+// </copyright>
+// <summary>
+//   
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace KKIS.Web
 {
-    [ExcludeFromCodeCoverage]
+    using System.Web.Optimization;
+
+    /// <summary>
+    /// Bundle config
+    /// </summary>
     public class BundleConfig
     {
-        // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
+        /// <summary>
+        /// Registers the bundles.
+        /// </summary>
+        /// <param name="bundles">The bundles.</param>
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(

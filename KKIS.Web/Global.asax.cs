@@ -1,18 +1,30 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Web;
-using System.Web.Http;
-using System.Web.Mvc;
-using System.Web.Optimization;
-using System.Web.Routing;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Global.asax.cs" company="Krystal Kleer Ice Sculptures, LLC">
+//   Copyright (c) Krystal Kleer Ice Sculptures, LLC. All rights reserved.
+// </copyright>
+// <summary>
+//   
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace KKIS.Web
 {
-    // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
-    // visit http://go.microsoft.com/?LinkId=9394801
+    using System.Diagnostics.CodeAnalysis;
+    using System.Web;
+    using System.Web.Http;
+    using System.Web.Mvc;
+    using System.Web.Optimization;
+    using System.Web.Routing;
 
+    /// <summary>
+    /// MVC application
+    /// </summary>
     [ExcludeFromCodeCoverage]
     public class MvcApplication : HttpApplication
     {
+        /// <summary>
+        /// Run on application start.
+        /// </summary>
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();

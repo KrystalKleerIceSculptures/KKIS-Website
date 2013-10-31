@@ -1,45 +1,67 @@
-﻿using System.Web.Mvc;
-using KKIS.Data.Contracts;
-using KKIS.Data.Models;
-using KKIS.Web.Controllers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="GalleryControllerTests.cs" company="Krystal Kleer Ice Sculptures, LLC">
+//   Copyright (c) Krystal Kleer Ice Sculptures, LLC. All rights reserved.
+// </copyright>
+// <summary>
+//   
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace KKIS.Web.Tests.Web.Controllers
 {
+    using System.Web.Mvc;
+
+    using KKIS.Data.Contracts;
+    using KKIS.Data.Models;
+    using KKIS.Web.Controllers;
+
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+    using Moq;
+
+    /// <summary>
+    /// GalleryController tests
+    /// </summary>
     [TestClass]
     public class GalleryControllerTests
     {
+        /// <summary>
+        /// Tests the gallery index action.
+        /// </summary>
         [TestMethod]
         public void IndexTest()
         {
             // Arrange
-            var mockKKISService = new Mock<IKkisDataService>();
-            mockKKISService.Setup(x => x.GetAlbumList(It.IsAny<string>())).Returns(new PhotoAlbumCollection());
-            GalleryController galleryController = new GalleryController(mockKKISService.Object);
+            var mockKkisService = new Mock<IKkisDataService>();
+            mockKkisService.Setup(x => x.GetAlbumList(It.IsAny<string>())).Returns(new PhotoAlbumCollection());
+            GalleryController galleryController = new GalleryController(mockKkisService.Object);
 
             // Act
-            var result = galleryController.Index();
+            var result = galleryController.Index() as ViewResult;
 
             // Assert
+            Assert.IsNotNull(result);
             Assert.IsInstanceOfType(result, typeof(ViewResult));
-            Assert.IsInstanceOfType((result as ViewResult).Model, typeof(PhotoAlbumCollection));
+            Assert.IsInstanceOfType(result.Model, typeof(PhotoAlbumCollection));
         }
 
+        /// <summary>
+        /// Tests the gallery navigation action.
+        /// </summary>
         [TestMethod]
         public void NavigationTest()
         {
             // Arrange
-            var mockKKISService = new Mock<IKkisDataService>();
-            mockKKISService.Setup(x => x.GetAlbumList(It.IsAny<string>())).Returns(new PhotoAlbumCollection());
-            GalleryController galleryController = new GalleryController(mockKKISService.Object);
+            var mockKkisService = new Mock<IKkisDataService>();
+            mockKkisService.Setup(x => x.GetAlbumList(It.IsAny<string>())).Returns(new PhotoAlbumCollection());
+            GalleryController galleryController = new GalleryController(mockKkisService.Object);
 
             // Act
             var result = galleryController.Navigation();
 
             // Assert
-            Assert.IsInstanceOfType(result, typeof(JsonResult));
-            Assert.IsInstanceOfType((result as JsonResult).Data, typeof(PhotoAlbumCollection));
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result.Data, typeof(PhotoAlbumCollection));
         }
     }
 }
