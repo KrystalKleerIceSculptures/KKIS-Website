@@ -14,12 +14,22 @@ namespace KKIS.Data.Models
     /// <summary>
     /// Photo album.
     /// </summary>
-    public class PhotoAlbum : List<Photo>
+    public class PhotoAlbum
     {
+        /// <summary>
+        /// Gets or sets the unique identifier.
+        /// </summary>
+        public string Id { get; set; }
+
         /// <summary>
         /// Gets or sets the title.
         /// </summary>
         public string Title { get; set; }
+
+        /// <summary>
+        /// Gets or sets the photos.
+        /// </summary>
+        public List<Photo> Photos { get; set; }
 
         /// <summary>
         /// Returns a <see cref="System.String" /> that represents this instance.

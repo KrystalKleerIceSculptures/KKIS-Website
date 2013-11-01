@@ -1,159 +1,67 @@
-﻿.hero
-{
-    margin: 40px -130px;
-    padding: 50px 130px 50px 130px;
-    background-size: cover;
-    background-image: url("http://twitter.github.io/bootstrap/assets/img/examples/slide-01.jpg");
-    background-position: top;
+﻿html, body {
+    height: 100%;
 }
 
-    .hero.page-header
-    {
-        color: #fff;
-        text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
+#content {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+#wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+#footer {
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+    #footer .credit {
+        margin: 20px 0;
     }
 
-        .hero.page-header h1
-        {
-            font-size: 60px;
-        }
-
-.hero-unit
-{
-    margin-top: 40px;
-    background-size: cover;
-    background-image: url("http://twitter.github.io/bootstrap/assets/img/examples/slide-01.jpg");
-    background-position: top;
-    color: #fff;
-    text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
-}
-
-.highlights .span4
-{
+/* Home */
+#home .highlights {
     text-align: center;
 }
 
-    .highlights .span4 img
-    {
-        width: 140px;
-        height: 140px;
+    #home .highlights img {
+        width: 250px;
+        height: 250px;
     }
 
-.highlights h2
-{
-    font-weight: normal;
+/* Gallery */
+#gallery #status {
+    margin-top: 100px;
 }
 
-.highlights .span4 p
-{
-    margin-left: 10px;
+#gallery .album .photo {
+    height: 116px;
+    width: 116px;
     margin-right: 10px;
+    margin-bottom: 10px;
+    float: left;
 }
 
-#photo-gallery
-{
-    margin-top: 40px;
-}
-
-/* Featurettes
-    ------------------------- */
-
-.featurette-divider
-{
-    margin: 80px 0; /* Space out the Bootstrap <hr> more */
-}
-
-.featurette
-{
-    padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
-    overflow: hidden; /* Vertically center images part 2: clear their floats. */
-}
-
-.featurette-image
-{
-    margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
-}
-
-    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
-    .featurette-image.pull-left
-    {
-        margin-right: 40px;
+    #gallery .album .photo .frame {
+        height: 100%;
+        width: 100%;
     }
 
-    .featurette-image.pull-right
-    {
-        margin-left: 40px;
-    }
+        #gallery .album .photo .frame .img-content {
+            height: 100%;
+            width: 100%;
+        }
 
-/* Thin out the marketing headings */
-.featurette-heading
-{
-    font-size: 50px;
-    font-weight: 300;
-    line-height: 1;
-    letter-spacing: -1px;
-}
-
-
-
-/* RESPONSIVE CSS
-    -------------------------------------------------- */
-
-@media (max-width: 979px)
-{
-
-    .navbar-fixed-top
-    {
-        margin-bottom: 0;
-    }
-
-    .hero
-    {
-        margin: 0 -20px 20px;
-        padding: 10px;
-        height: 150px;
-    }
-
-
-    .featurette
-    {
-        height: auto;
-        padding: 0;
-    }
-
-    .featurette-image.pull-left,
-    .featurette-image.pull-right
-    {
-        display: block;
-        float: none;
-        max-width: 40%;
-        margin: 0 auto 20px;
-    }
-}
-
-
-@media (max-width: 767px)
-{
-
-    .highlights .span4 + .span4
-    {
-        margin-top: 40px;
-    }
-
-    .featurette-heading
-    {
-        font-size: 30px;
-    }
-
-    .featurette .lead
-    {
-        font-size: 18px;
-        line-height: 1.5;
-    }
-}
-
-#gallery-navigation a
-{
-    height: 75px;
-    background-color: lightgray;
-}
+        #gallery .album .photo .frame img {
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px; /* Half the height */
+            margin-left: -50px; /* Half the width */
+        }

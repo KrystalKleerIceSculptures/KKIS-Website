@@ -58,8 +58,8 @@ namespace KKIS.Web.Tests.Data.Services
             Assert.IsNotNull(result);
             Assert.AreEqual(1, result.Count);
             Assert.AreEqual(TestAlbumTitle, result.First().Title);
-            Assert.AreEqual(1, result.First().Count);
-            Assert.AreEqual(TestPhotoTitle, result.First().First().Title);
+            Assert.AreEqual(1, result.First().Photos.Count);
+            Assert.AreEqual(TestPhotoTitle, result.First().Photos.First().Title);
         }
     }
 }

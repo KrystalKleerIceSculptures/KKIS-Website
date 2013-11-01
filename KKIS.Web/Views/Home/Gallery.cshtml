@@ -4,43 +4,39 @@
 }
 @section Scripts
 {
-    
+    <script type="text/javascript">
+        var dataUrl = '@Url.Action("GetAlbums", "Home")';
+    </script>
+    <script src="~/Scripts/GalleryCtrl.js"></script>
 }
-<div id="photo-gallery" ng-controller="GalleryCtrl">
-    <div class="row">
-        <div class="span4 affix">
-            <ul id="gallery-navigation" class="nav nav-pills nav-stacked">
-                @foreach (PhotoAlbum album in Model)
-                {
-                    <li>
-                        <a href="#">@album.Title</a>
-                    </li>
-                }
-            </ul>
+<div id="gallery" ng-controller="GalleryCtrl" ng-init="retrieveAlbums()">
+    <div class="row" id="status" ng-show="status=='loading'">
+        <h1>Loading...</h1>
+        <div class="progress progress-striped active">
+            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                <span class="sr-only">Loading</span>
+            </div>
         </div>
-
-        <div class="offset4 span8" data-spy="scroll" data-target="#gallery-navigation">
-            @foreach (PhotoAlbum album in Model)
-            {
-                <div class="row">
-                    <div class="span8">
-                        <h1>@album.Title</h1>
-                        @foreach (Photo photo in album)
-                        {
-                            <div class="row">
-                                <div class="span8">
-                                    <div class="lead">@photo.Title</div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="span8">
-                                    <img src="@photo.Url" width="100%" />
-                                </div>
-                            </div>
-                        }
+    </div>
+    <div class="row" ng-show="status==''">
+        <div class="col-md-3 hidden-xs hidden-sm">
+            <h1>&nbsp;</h1>
+            <div class="hidden-print affix" role="complementary">
+                <ul class="nav nav-pills nav-stacked well">
+                    <li ng-repeat="album in albums"><a href="#{{album.id}}">{{album.title}}</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9" role="main">
+            <div ng-repeat="album in albums" class="row album" id="{{album.id}}">
+                <h1>{{album.title}}</h1>
+                <div ng-repeat="photo in album.photos" class="photo">
+                    <div class="img-thumbnail frame">
+                        <div class="img-content" title="{{photo.Title}}" style="background: url({{photo.Url}}) center center no-repeat;">
+                        </div>
                     </div>
                 </div>
-            }
+            </div>
         </div>
     </div>
 </div>

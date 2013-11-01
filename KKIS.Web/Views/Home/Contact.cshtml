@@ -1,77 +1,53 @@
 ﻿@model KKIS.Web.ViewModels.ContactViewModel
-<div id="about_us_page">
-    <div id="about_panel_1">
-        <h2>About Us</h2>
-        <p>
-            Hours by Appointment Only<br />
-            Operating from Appleton, WI
-        </p>
-        <p>
-            Phone: (920) 954-9191<br />
-            Email: <a href="mailto:info@krystalkleerice.com">info@krystalkleerice.com</a>
-        </p>
-        <div id="contactform">
-            @using (Html.BeginForm())
-            {
-                @Html.ValidationSummary(true)
+<div id="contact_us_page">
+    <h2>Contact Us</h2>
+    <p>
+        Hours by Appointment Only<br />
+        Operating from Appleton, WI
+    </p>
+    <p>
+        Phone: (920) 954-9191<br />
+        Email: <a href="mailto:info@krystalkleerice.com">info@krystalkleerice.com</a>
+    </p>
+    <div id="contactform">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
 
-                <fieldset>
-                    <legend>Contact Us</legend>
-                    <div class="editor-label">
-                        @Html.LabelFor(model => model.Name)
-                    </div>
-                    <div class="editor-field">
-                        @Html.EditorFor(model => model.Name)
-                        @Html.ValidationMessageFor(model => model.Name)
-                    </div>
-                    <div class="cleaner_h10">
-                    </div>
-                    <div class="editor-label">
-                        @Html.LabelFor(model => model.Email)
-                    </div>
-                    <div class="editor-field">
-                        @Html.EditorFor(model => model.Email)
-                        @Html.ValidationMessageFor(model => model.Email)
-                    </div>
-                    <div class="cleaner_h10">
-                    </div>
-                    <div class="editor-label">
-                        @Html.LabelFor(model => model.Message)
-                    </div>
-                    <div class="editor-field">
-                        @Html.EditorFor(model => model.Message)
-                        @Html.ValidationMessageFor(model => model.Message)
-                    </div>
-                    <div class="cleaner_h10">
-                    </div>
-                    <p>
-                        <input type="submit" value="Send" />
-                        <input type="submit" value="Reset" />
-                    </p>
-                </fieldset>
-            }
-        </div>
-    </div>
-    <div id="about_panel_2">
-        <a href="/Content/images/profile.jpg" target="_parent">
-            <img src="/Content/images/profile.jpg" alt="Paul Salmon" class="image_wrapper image_fr"
-                width="45%" /></a>
-        <p>
-            Krystal Kleer Ice Sculptures was founded as a part-time business in 1988 by Paul
-            Salmon while he was working as a chef in Green Bay, WI. The business moved to Appleton,
-            WI in 1994. In 1998 Krystal Kleer became a full-time career for Paul.
-        </p>
-        <p>
-            Paul's family assists him at Krystal Kleer Ice in the office and with deliveries.
-        </p>
-        <p>
-            Paul attributes his talent to God our creator, and strives to honor Him through
-            his talent as a carver.
-        </p>
-        <p>
-            Krystal Kleer Ice Sculptures, LLC. Reserves the right to exercise discretion in
-            regards to each sculpture requested, and reserves the right to deny any carving
-            which might be considered objectionable or offensive in nature.
-        </p>
+            <fieldset>
+                <legend>Contact Us</legend>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+                <div class="cleaner_h10">
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Email)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+                <div class="cleaner_h10">
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Message)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Message)
+                    @Html.ValidationMessageFor(model => model.Message)
+                </div>
+                <div class="cleaner_h10">
+                </div>
+                <p>
+                    <input type="submit" value="Send" />
+                    <input type="submit" value="Reset" />
+                </p>
+            </fieldset>
+        }
     </div>
 </div>

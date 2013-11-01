@@ -56,14 +56,15 @@ namespace KKIS.Data.Services
             {
                 PhotoAlbum album = new PhotoAlbum
                 {
+                    Id = x.Value.ToLower().Replace(' ', '_'),
                     Title = x.Value
                 };
                 Dictionary<string, string> photos = this.googleData.GetPhotoList(x.Key);
-                album.AddRange(photos.Select(y => new Photo
+                album.Photos = photos.Select(y => new Photo
                 {
                     Title = y.Value,
                     Url = y.Key
-                }));
+                }).ToList();
                 return album;
             }).ToArray());
 

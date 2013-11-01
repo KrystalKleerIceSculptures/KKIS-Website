@@ -9,13 +9,12 @@
 
 namespace KKIS.Web.Controllers
 {
-    using System.Collections.Generic;
+    using System.Configuration;
     using System.Web.Mvc;
 
     using KKIS.Data.Contracts;
     using KKIS.Data.Models;
     using KKIS.Data.Services;
-    using KKIS.Web.Models;
 
     /// <summary>
     /// Home controller
@@ -45,8 +44,7 @@ namespace KKIS.Web.Controllers
         /// <returns>The home view.</returns>
         public ActionResult Index()
         {
-            ViewBag.Gallery = new List<PhotoAlbum>();
-            return this.View(new ContactModel());
+            return this.View();
         }
 
         /// <summary>
@@ -56,6 +54,35 @@ namespace KKIS.Web.Controllers
         public ActionResult Gallery()
         {
             return this.View();
+        }
+
+        /// <summary>
+        /// Displays the about view.
+        /// </summary>
+        /// <returns>The about view.</returns>
+        public ActionResult About()
+        {
+            return this.View();
+        }
+
+        /// <summary>
+        /// Displays the contact view.
+        /// </summary>
+        /// <returns>The contact view.</returns>
+        public ActionResult Contact()
+        {
+            return this.View();
+        }
+
+        /// <summary>
+        /// Gets the albums.
+        /// </summary>
+        /// <returns>The albums.</returns>
+        [HttpPost]
+        public JsonResult GetAlbums()
+        {
+            PhotoAlbumCollection albumCollection = KkisData.GetAlbumList(ConfigurationManager.AppSettings["KKISGoogleUser"]);
+            return this.Json(albumCollection);
         }
     }
 }
