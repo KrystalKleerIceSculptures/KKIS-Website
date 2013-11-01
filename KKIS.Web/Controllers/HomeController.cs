@@ -40,13 +40,22 @@ namespace KKIS.Web.Controllers
         }
 
         /// <summary>
-        /// Displays the home index view.
+        /// Displays the home view.
         /// </summary>
-        /// <returns>The home index view.</returns>
+        /// <returns>The home view.</returns>
         public ActionResult Index()
         {
             ViewBag.Gallery = new List<PhotoAlbum>();
             return this.View(new ContactModel());
+        }
+
+        /// <summary>
+        /// Displays the gallery view.
+        /// </summary>
+        /// <returns>The gallery view.</returns>
+        public ActionResult Gallery()
+        {
+            return this.View();
         }
     }
 }
