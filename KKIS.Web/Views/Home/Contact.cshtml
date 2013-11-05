@@ -1,53 +1,53 @@
-﻿@model KKIS.Web.ViewModels.ContactViewModel
-<div id="contact_us_page">
-    <h2>Contact Us</h2>
-    <p>
-        Hours by Appointment Only<br />
-        Operating from Appleton, WI
-    </p>
-    <p>
-        Phone: (920) 954-9191<br />
-        Email: <a href="mailto:info@krystalkleerice.com">info@krystalkleerice.com</a>
-    </p>
-    <div id="contactform">
-        @using (Html.BeginForm())
-        {
-            @Html.ValidationSummary(true)
+﻿@model KKIS.Web.Models.ContactModel
+<div id="contact-us">
+    <div class="page-header">
+        <h1>Contact Us</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <p>
+                Phone: (920) 954-9191<br />
+                Email: <a href="mailto:info@krystalkleerice.com">info@krystalkleerice.com</a>
+            </p>
+            <p>
+                Hours by Appointment Only<br />
+                Operating from Appleton, WI
+            </p>
+            <p>
+                <a href="https://www.facebook.com/KrystalKleerIceSculptures" title="Krystal Kleer Ice Sculptures, LLC">
+                    <img alt="Krystal Kleer Ice on Facebook" src="https://badge.facebook.com/badge/129369767098901.1225.1812467171.png" />
+                </a>
+            </p>
+        </div>
+        <div class="col-md-6">
+            <div id="contactform">
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+                    <fieldset>
+                        <legend>Request an Appointment</legend>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Name)
+                            @Html.TextBoxFor(model => model.Name, new { placeholder = "Name", @class = "form-control", type = "text" })
+                            @Html.ValidationMessageFor(model => model.Name)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Email)
+                            @Html.TextBoxFor(model => model.Email, new { placeholder = "Email", @class = "form-control", type = "email" })
+                            @Html.ValidationMessageFor(model => model.Email)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Message)
+                            @Html.TextAreaFor(model => model.Message, new { placeholder = "Message", @class = "form-control", type = "text" })
+                            @Html.ValidationMessageFor(model => model.Message)
+                            <span class="help-block">Please leave us enough information so that we can contact you back!</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-default">Reset</button>
+                    </fieldset>
+                }
+            </div>
 
-            <fieldset>
-                <legend>Contact Us</legend>
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.Name)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(model => model.Name)
-                    @Html.ValidationMessageFor(model => model.Name)
-                </div>
-                <div class="cleaner_h10">
-                </div>
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.Email)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(model => model.Email)
-                    @Html.ValidationMessageFor(model => model.Email)
-                </div>
-                <div class="cleaner_h10">
-                </div>
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.Message)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(model => model.Message)
-                    @Html.ValidationMessageFor(model => model.Message)
-                </div>
-                <div class="cleaner_h10">
-                </div>
-                <p>
-                    <input type="submit" value="Send" />
-                    <input type="submit" value="Reset" />
-                </p>
-            </fieldset>
-        }
+        </div>
     </div>
 </div>

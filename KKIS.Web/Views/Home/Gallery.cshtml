@@ -13,7 +13,7 @@
 }
 <link href="~/Content/blueimp-gallery.min.css" rel="stylesheet" />
 <link href="~/Content/bootstrap-image-gallery.min.css" rel="stylesheet" />
-<div id="gallery" ng-controller="GalleryCtrl" ng-init="retrieveAlbums()">
+<div id="gallery" ng-controller="GalleryCtrl" ng-init="retrieveAlbums()" ng-cloak="">
     <div class="row" id="status" ng-show="status=='loading'">
         <h1>Loading...</h1>
         <div class="progress progress-striped active">
@@ -35,9 +35,9 @@
             <div ng-repeat="album in albums" class="row album" id="{{album.id}}">
                 <h1>{{album.title}}</h1>
                 <div ng-repeat="photo in album.photos" class="photo">
-                    <a ng-href="{{photo.Url}}">
+                    <a ng-href="{{photo.Url}}" title="{{photo.Title}}" data-gallery>
                         <div class="img-thumbnail frame">
-                            <div class="img-content" title="{{photo.Title}}" style="background: url({{photo.Url}}) center center no-repeat;">
+                            <div class="img-content" style="background: url({{photo.Thumbnail}}) center center no-repeat;">
                             </div>
                         </div>
                     </a>
@@ -46,7 +46,6 @@
         </div>
     </div>
 </div>
-<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
 <div id="blueimp-gallery" class="blueimp-gallery">
     <!-- The container for the modal slides -->
     <div class="slides"></div>

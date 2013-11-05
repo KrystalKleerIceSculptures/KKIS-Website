@@ -136,7 +136,7 @@
     <Content Include="Content\bootstrap-image-gallery.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\images\bride_and_groom_over_the_threshold.jpg" />
     <Content Include="Content\images\frosty_the_snowman.jpg" />
     <Content Include="Content\images\logo_with_clam_shell_package.jpg" />
@@ -201,10 +201,12 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\kkis.css" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Properties\PublishProfiles\KKIS Dev.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="img\loading.gif" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap-image-gallery.js" />
@@ -245,8 +247,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Facebook.cshtml" />
-    <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Home\Questions.cshtml" />
     <Content Include="Views\Home\Services.cshtml">
       <SubType>Code</SubType>

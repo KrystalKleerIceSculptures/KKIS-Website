@@ -30,6 +30,11 @@ namespace KKIS.Data.Models
         public string Url { get; set; }
 
         /// <summary>
+        /// Gets or sets the thumbnail.
+        /// </summary>
+        public string Thumbnail { get; set; }
+
+        /// <summary>
         /// Returns a <see cref="System.String" /> that represents this instance.
         /// </summary>
         /// <returns>

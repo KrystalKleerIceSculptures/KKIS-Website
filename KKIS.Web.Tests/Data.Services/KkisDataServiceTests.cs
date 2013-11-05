@@ -9,6 +9,7 @@
 
 namespace KKIS.Web.Tests.Data.Services
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -39,11 +40,13 @@ namespace KKIS.Web.Tests.Data.Services
             {
                 { TestAlbumKey, TestAlbumTitle }
             };
+            const string TestPhotoThumbnail = "Test Photo Thumbnail";
             const string TestPhotoTitle = "Test Photo";
             const string TestPhotoKey = "Test Photo Key";
-            Dictionary<string, string> photos = new Dictionary<string, string>
+            Tuple<string, string> testPhoto = new Tuple<string, string>(TestPhotoThumbnail, TestPhotoTitle);
+            Dictionary<string, Tuple<string, string>> photos = new Dictionary<string, Tuple<string, string>>
             {
-                { TestPhotoKey, TestPhotoTitle }
+                { TestPhotoKey, testPhoto }
             };
             const string TestUser = "Test User";
             Mock<IGoogleDataService> mockGoogleService = new Mock<IGoogleDataService>();

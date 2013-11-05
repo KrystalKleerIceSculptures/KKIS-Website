@@ -65,3 +65,8 @@
             margin-top: -50px; /* Half the height */
             margin-left: -50px; /* Half the width */
         }
+
+/* Hide scrollbars when displaying modal */
+.blueimp-gallery > .slides > .slide > .slide-content {
+    overflow: hidden;
+}

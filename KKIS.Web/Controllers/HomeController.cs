@@ -15,6 +15,7 @@ namespace KKIS.Web.Controllers
     using KKIS.Data.Contracts;
     using KKIS.Data.Models;
     using KKIS.Data.Services;
+    using KKIS.Web.Models;
 
     /// <summary>
     /// Home controller
@@ -72,6 +73,21 @@ namespace KKIS.Web.Controllers
         public ActionResult Contact()
         {
             return this.View();
+        }
+
+        /// <summary>
+        /// Submits the contact view.
+        /// </summary>
+        /// <param name="viewModel">The view model.</param>
+        /// <returns>
+        /// The contact view.
+        /// </returns>
+        [HttpPost]
+        public ActionResult Contact(ContactModel viewModel)
+        {
+            this.KkisData.SendEmail(viewModel.Name, viewModel.Email, viewModel.Message);
+
+            return this.RedirectToAction("Contact");
         }
 
         /// <summary>

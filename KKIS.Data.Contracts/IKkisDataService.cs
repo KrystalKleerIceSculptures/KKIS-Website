@@ -22,5 +22,14 @@ namespace KKIS.Data.Contracts
         /// <param name="user">The user.</param>
         /// <returns>The photo album collection.</returns>
         PhotoAlbumCollection GetAlbumList(string user);
+
+        /// <summary>
+        /// Sends the email.
+        /// </summary>
+        /// <param name="fromName">From name.</param>
+        /// <param name="fromEmail">From email.</param>
+        /// <param name="message">The message.</param>
+        /// <returns>true if successful; false otherwise</returns>
+        bool SendEmail(string fromName, string fromEmail, string message);
     }
 }

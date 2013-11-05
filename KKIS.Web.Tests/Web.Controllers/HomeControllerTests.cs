@@ -36,8 +36,6 @@ namespace KKIS.Web.Tests.Web.Controllers
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(ViewResult));
-            Assert.IsInstanceOfType(result.Model, typeof(ContactModel));
         }
     }
 }

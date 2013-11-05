@@ -9,6 +9,7 @@
 
 namespace KKIS.Data.Contracts
 {
+    using System;
     using System.Collections.Generic;
 
     /// <summary>
@@ -28,6 +29,6 @@ namespace KKIS.Data.Contracts
         /// </summary>
         /// <param name="feedUri">The feed URI.</param>
         /// <returns>The dictionary of photos.</returns>
-        Dictionary<string, string> GetPhotoList(string feedUri);
+        Dictionary<string, Tuple<string, string>> GetPhotoList(string feedUri);
     }
 }

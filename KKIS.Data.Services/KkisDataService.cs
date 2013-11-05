@@ -9,8 +9,10 @@
 
 namespace KKIS.Data.Services
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Net.Mail;
 
     using KKIS.Data.Contracts;
     using KKIS.Data.Models;
@@ -59,16 +61,47 @@ namespace KKIS.Data.Services
                     Id = x.Value.ToLower().Replace(' ', '_'),
                     Title = x.Value
                 };
-                Dictionary<string, string> photos = this.googleData.GetPhotoList(x.Key);
+                Dictionary<string, Tuple<string, string>> photos = this.googleData.GetPhotoList(x.Key);
                 album.Photos = photos.Select(y => new Photo
                 {
-                    Title = y.Value,
-                    Url = y.Key
+                    Title = y.Value.Item2,
+                    Url = y.Key,
+                    Thumbnail = y.Value.Item1
                 }).ToList();
                 return album;
             }).ToArray());
 
             return albumCollection;
+        }
+
+        /// <summary>
+        /// Sends the email.
+        /// </summary>
+        /// <param name="fromName">From name.</param>
+        /// <param name="fromEmail">From email.</param>
+        /// <param name="message">The message.</param>
+        /// <returns>true if successful; false otherwise</returns>
+        public bool SendEmail(string fromName, string fromEmail, string message)
+        {
+            bool result = true;
+            try
+            {
+                MailMessage mail = new MailMessage(
+                    fromEmail,
+                    "brandon.j.salmon@gmail.com",
+                    string.Format("Contact Message from {0} via krystalkleerice.com", fromName),
+                    message);
+
+                SmtpClient smtp = new SmtpClient("smtp.secureserver.net");
+
+                smtp.Send(mail);
+            }
+            catch (Exception)
+            {
+                result = false;
+            }
+
+            return result;
         }
     }
 }

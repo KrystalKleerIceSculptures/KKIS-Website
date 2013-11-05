@@ -9,10 +9,11 @@
 
 namespace KKIS.Data.Services
 {
+    using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
-    using System.Linq;
 
+    using Google.GData.Client;
     using Google.GData.Photos;
 
     using KKIS.Data.Contracts;
@@ -38,7 +39,10 @@ namespace KKIS.Data.Services
             Dictionary<string, string> albums = new Dictionary<string, string>();
             PicasaFeed picasaFeed = this.picasaService.Query(new AlbumQuery(PicasaQuery.CreatePicasaUri(user)));
 
-            picasaFeed.Entries.Select(x => albums[x.FeedUri] = x.Title.Text).ToArray();
+            foreach (AtomEntry x in picasaFeed.Entries)
+            {
+                albums[x.FeedUri] = x.Title.Text;
+            }
 
             return albums;
         }
@@ -48,12 +52,21 @@ namespace KKIS.Data.Services
         /// </summary>
         /// <param name="feedUri">The feed URI.</param>
         /// <returns>Dictionary of photos.</returns>
-        public Dictionary<string, string> GetPhotoList(string feedUri)
+        public Dictionary<string, Tuple<string, string>> GetPhotoList(string feedUri)
         {
-            Dictionary<string, string> photos = new Dictionary<string, string>();
+            const int Medium = 1;
+            Dictionary<string, Tuple<string, string>> photos = new Dictionary<string, Tuple<string, string>>();
             PicasaFeed picasaFeed = this.picasaService.Query(new PhotoQuery(feedUri));
 
-            picasaFeed.Entries.Select(x => photos[x.Content.AbsoluteUri] = x.Summary.Text).ToArray();
+            foreach (PicasaEntry x in picasaFeed.Entries)
+            {
+                string imageUrl = x.Content.AbsoluteUri;
+                string thumbnailUrl = x.Media.Thumbnails[Medium].Url;
+                string imageTitle = x.Summary.Text;
+
+                Tuple<string, string> photo = new Tuple<string, string>(thumbnailUrl, imageTitle);
+                photos[imageUrl] = photo;
+            }
 
             return photos;
         }
