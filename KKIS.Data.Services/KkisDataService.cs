@@ -12,6 +12,7 @@ namespace KKIS.Data.Services
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Net;
     using System.Net.Mail;
 
     using KKIS.Data.Contracts;
@@ -83,16 +84,29 @@ namespace KKIS.Data.Services
         /// <returns>true if successful; false otherwise</returns>
         public bool SendEmail(string fromName, string fromEmail, string message)
         {
+            const string Host = "smtp.gmail.com";
+            const int Port = 587;
+
             bool result = true;
             try
             {
                 MailMessage mail = new MailMessage(
                     fromEmail,
-                    "brandon.j.salmon@gmail.com",
+                    "krystalkleerice@gmail.com",
                     string.Format("Contact Message from {0} via krystalkleerice.com", fromName),
                     message);
 
-                SmtpClient smtp = new SmtpClient("smtp.secureserver.net");
+                mail.CC.Add(fromEmail);
+
+                SmtpClient smtp = new SmtpClient
+                {
+                    Host = Host,
+                    Port = Port,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    Credentials = new NetworkCredential("krystalkleerice@gmail.com", "k2k1i9s0"),
+                    Timeout = 20000
+                };
 
                 smtp.Send(mail);
             }

@@ -13,6 +13,15 @@
 }
 <link href="~/Content/blueimp-gallery.min.css" rel="stylesheet" />
 <link href="~/Content/bootstrap-image-gallery.min.css" rel="stylesheet" />
+<style type="text/css">
+    /* Hide scrollbars when displaying modal */
+    .blueimp-gallery > .slides > .slide > .slide-content {
+        overflow: hidden;
+    }
+    .blueimp-gallery .modal-dialog {
+        max-width: 1440px;
+    }
+</style>
 <div id="gallery" ng-controller="GalleryCtrl" ng-init="retrieveAlbums()" ng-cloak="">
     <div class="row" id="status" ng-show="status=='loading'">
         <h1>Loading...</h1>

@@ -56,11 +56,15 @@ namespace KKIS.Data.Services
         {
             const int Medium = 1;
             Dictionary<string, Tuple<string, string>> photos = new Dictionary<string, Tuple<string, string>>();
-            PicasaFeed picasaFeed = this.picasaService.Query(new PhotoQuery(feedUri));
+            PhotoQuery query = new PhotoQuery(feedUri)
+            {
+                ExtraParameters = "imgmax=1600"
+            };
+            PicasaFeed picasaFeed = this.picasaService.Query(query);
 
             foreach (PicasaEntry x in picasaFeed.Entries)
             {
-                string imageUrl = x.Content.AbsoluteUri;
+                string imageUrl = x.Media.Content.Url;
                 string thumbnailUrl = x.Media.Thumbnails[Medium].Url;
                 string imageTitle = x.Summary.Text;
 
