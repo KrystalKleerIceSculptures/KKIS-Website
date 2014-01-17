@@ -1,0 +1,7 @@
+*.suo
+*.csproj.user
+bin
+obj
+TestResults
+packages
+StyleCop.Cache

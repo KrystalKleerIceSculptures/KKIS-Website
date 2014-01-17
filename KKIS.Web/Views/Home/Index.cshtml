@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Krystal Kleer Ice Sculptures";
+}
+@section hero
+{
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Krystal Kleer Ice Sculptures</h1>
+            <p class="lead">Providing beautiful, "hand-carved" ice sculptures throughout Wisconsin and beyond since 1988</p>
+            <p>@Html.ActionLink("Get Started Now", "Contact", "Home", null, new { @class = "btn btn-primary btn-lg", role = "button" })</p>
+        </div>
+    </div>
+}
+<div id="home">
+    <div class="row highlights">
+        <div class="col-lg-4">
+            <img src="~/Content/images/bride_and_groom_over_the_threshold.jpg" class="img-circle" alt="Bride and groom over the threshold">
+            <h2>Wedding and Family</h2>
+            <p>Let us help create the perfect "this is us" celebration with a <b><i>stunning and personal work of art</i></b>. Add unforgettable sparkle to your special day!</p>
+            <p>
+                @Html.ActionLink("See more »", "Gallery", "Home", null, new { @class = "btn btn-default", role = "button" })
+            </p>
+        </div>
+        <div class="col-lg-4">
+            <img src="~/Content/images/logo_with_clam_shell_package.jpg" class="img-circle" alt="logo with clam shell">
+            <h2>Corporate and Charity</h2>
+            <p>Ice sculptures are a beautiful way to celebrate success, reward employees, and impress donors. Let us help <b><i>make any event memorable</i></b>! </p>
+            <p>
+                @Html.ActionLink("See more »", "Gallery", "Home", null, new { @class = "btn btn-default", role = "button" })
+            </p>
+        </div>
+        <div class="col-lg-4">
+            <img src="~/Content/images/winterfest_throne_back_view_2012.jpg" class="img-circle" alt="Bride and groom over the threshold">
+            <h2>Festivals and Live Events</h2>
+            <p><b><i>Draw in the crowds and shoppers</i></b> with a live sculpting demonstration. Year after year, people will look forward to your events.  Contact us today, and let's get started!</p>
+            <p>
+                @Html.ActionLink("See more »", "Gallery", "Home", null, new { @class = "btn btn-default", role = "button" })
+            </p>
+        </div>
+    </div>
+</div>
+@*<hr class="featurette-divider">
+<div class="featurette">
+    <img class="featurette-image pull-right" src="~/Content/images/frosty_the_snowman.jpg">
+    <h2 class="featurette-heading">Hand-Carved Sculptures.  <span class="muted">Uniquely You. </span></h2>
+    <p class="lead">The process begins with a complementary consultation to learn more about you and your special event. Bring your inspiration and we can help you translate those ideas into a beautiful masterpiece.</p>
+</div>
+<hr class="featurette-divider">
+<div class="featurette">
+    <img class="featurette-image pull-left" src="~/Content/images/frosty_the_snowman.jpg">
+    <h2 class="featurette-heading">Your Design. <span class="muted">Your Ice.</span></h2>
+    <p class="lead">Because we create a block of ice specifically for you, your meaningful items can appear to float in Krystal Kleer ice. Consider the elegance of your wedding bouquet suspended in your carving.</p>
+</div>
+<hr class="featurette-divider">
+<div class="featurette">
+    <img class="featurette-image pull-right" src="~/Content/images/frosty_the_snowman.jpg">
+    <h2 class="featurette-heading">25 Years of Experinece. <span class="muted">Timeless Beauty.</span></h2>
+    <p class="lead">Contact Us at (920) 954-9191 or krystalkleericesculptures@yahoo.com to imagine yours today!</p>
+</div>
+<hr class="featurette-divider">*@
